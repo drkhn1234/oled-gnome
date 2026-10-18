@@ -1,0 +1,68 @@
+/* OLED colors for GTK 3 themes that use the older Adwaita names. */
+@define-color theme_bg_color @window_bg_color;
+@define-color theme_fg_color @window_fg_color;
+@define-color theme_base_color @view_bg_color;
+@define-color theme_text_color @view_fg_color;
+@define-color bg_color @window_bg_color;
+@define-color fg_color @window_fg_color;
+@define-color base_color @view_bg_color;
+@define-color text_color @view_fg_color;
+@define-color insensitive_bg_color @window_bg_color;
+@define-color insensitive_fg_color #999999;
+@define-color insensitive_base_color @view_bg_color;
+
+/* Keep large surfaces black; retain normal control and selection feedback. */
+.background,
+headerbar,
+headerbar:backdrop,
+toolbar,
+statusbar,
+notebook > header,
+popover > contents,
+.sidebar {
+  background-color: @window_bg_color;
+  background-image: none;
+}
+.view,
+textview,
+textview text {
+  background-color: @view_bg_color;
+}
+
+menu, menubar {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+}
+
+/* Match the subtle inner outline used by dark window decorations. */
+popover,
+menu {
+  outline: 1px solid rgba(255, 255, 255, 0.07);
+  outline-offset: -1px;
+}
+
+/* GTK 3 runtimes may fall back to a light base theme when drawing native frames. */
+headerbar,
+.titlebar {
+  color: @headerbar_fg_color;
+  border: 1px solid #242424;
+  box-shadow: none;
+}
+headerbar .title,
+.titlebar .title,
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+  color: @headerbar_fg_color;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+headerbar:backdrop,
+.titlebar:backdrop,
+headerbar:backdrop .title,
+.titlebar:backdrop .title,
+headerbar .title:backdrop,
+.titlebar .title:backdrop,
+headerbar button.titlebutton:backdrop,
+.titlebar button.titlebutton:backdrop {
+  color: #b3b3b3;
+}

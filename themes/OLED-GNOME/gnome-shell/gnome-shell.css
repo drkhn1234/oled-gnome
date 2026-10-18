@@ -1,0 +1,205 @@
+/* OLED for GNOME Shell 51. Keep GNOME's layout and interaction states. */
+@import url("resource:///org/gnome/shell/theme/gnome-shell-dark.css");
+
+/* Main Shell surfaces. */
+#panel,
+#overview,
+.popup-menu-content,
+.candidate-popup-content,
+.quick-settings,
+.quick-toggle-menu,
+.modal-dialog,
+.osd-window,
+.switcher-list,
+.workspace-switcher,
+.resize-popup,
+.screenshot-ui-panel,
+#LookingGlassDialog,
+.search-section-content,
+.app-folder-dialog,
+#dash .dash-background {
+  background-color: #000000;
+  color: #ffffff;
+  border-color: #242424;
+}
+
+/* Calendar, notification center, and their cards. */
+.calendar,
+.datemenu-today-button,
+.events-button,
+.world-clocks-button,
+.weather-button,
+.message,
+.message-view .message,
+.message-list,
+.datemenu-calendar-column {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.message,
+.message-view .message,
+.events-button,
+.world-clocks-button,
+.weather-button {
+  border: 1px solid #242424;
+}
+
+/* Preserve visible feedback on interactive surfaces. */
+.datemenu-today-button:hover,
+.events-button:hover,
+.world-clocks-button:hover,
+.weather-button:hover,
+.quick-toggle-menu:hover,
+.message:hover {
+  background-color: #161616;
+}
+
+.datemenu-today-button:active,
+.events-button:active,
+.world-clocks-button:active,
+.weather-button:active {
+  background-color: #242424;
+}
+
+/* Match the charcoal controls used by the OLED application theme. */
+.quick-toggle:not(:checked),
+.quick-menu-toggle .quick-toggle-arrow,
+.quick-settings-system-item .icon-button,
+.search-entry,
+.dash-label {
+  background-color: #161616;
+}
+
+.quick-toggle:not(:checked):hover,
+.quick-settings-system-item .icon-button:hover {
+  background-color: #242424;
+}
+
+/* OLED base button fills; retain existing borders and focus rings. */
+.button,
+.icon-button,
+.calendar .calendar-day-heading,
+.calendar .calendar-day,
+.calendar .calendar-month-header .calendar-month-label,
+.calendar .calendar-month-header .pager-button,
+.datemenu-today-button,
+.events-button,
+.world-clocks-button,
+.weather-button,
+.message .message-header .message-expand-button,
+.message .message-header .message-close-button,
+.message-notification-group .message-collapse-button,
+.message-media-control,
+.notification-button,
+.quick-toggle,
+.quick-toggle-has-menu,
+.quick-toggle-has-menu .quick-toggle-menu-button,
+.quick-menu-toggle .quick-toggle-arrow,
+.screenshot-ui-show-pointer-button,
+.screenshot-ui-type-button,
+.screenshot-ui-shot-cast-button,
+.screenshot-ui-close-button,
+.window-close {
+  background-color: #000000 !important;
+}
+
+/* Filled accent states for enabled, selected, and pressed controls. */
+.calendar .calendar-day.calendar-today,
+.calendar .calendar-day:selected,
+.button.default,
+.icon-button.default,
+.button:checked,
+.button:active,
+.icon-button:checked,
+.icon-button:active,
+.quick-toggle:checked,
+.quick-toggle:active,
+.quick-toggle-has-menu:checked,
+.quick-toggle-has-menu:checked .quick-toggle,
+.quick-toggle-has-menu:checked .quick-toggle-menu-button,
+.quick-toggle-has-menu .quick-toggle-menu-button:checked,
+.screenshot-ui-type-button:checked,
+.screenshot-ui-shot-cast-button:checked {
+  background-color: -st-accent-color !important;
+  color: -st-accent-fg-color !important;
+}
+
+/* Visible hover feedback above the base and accent fill overrides. */
+.button:hover,
+.icon-button:hover,
+.calendar .calendar-day:hover,
+.calendar .calendar-month-header .calendar-month-label:hover,
+.calendar .calendar-month-header .pager-button:hover,
+.datemenu-today-button:hover,
+.events-button:hover,
+.world-clocks-button:hover,
+.weather-button:hover,
+.message .message-header .message-expand-button:hover,
+.message .message-header .message-close-button:hover,
+.message-notification-group .message-collapse-button:hover,
+.message-media-control:hover,
+.notification-button:hover,
+.quick-toggle:hover,
+.quick-toggle-has-menu .quick-toggle-menu-button:hover,
+.quick-menu-toggle .quick-toggle-arrow:hover,
+.screenshot-ui-show-pointer-button:hover,
+.screenshot-ui-type-button:hover,
+.screenshot-ui-shot-cast-button:hover,
+.screenshot-ui-close-button:hover,
+.window-close:hover {
+  background-color: #1a1a1a !important;
+}
+
+.calendar .calendar-day.calendar-today:hover,
+.calendar .calendar-day:selected:hover,
+.button.default:hover,
+.icon-button.default:hover,
+.button:checked:hover,
+.button:active:hover,
+.icon-button:checked:hover,
+.icon-button:active:hover,
+.quick-toggle:checked:hover,
+.quick-toggle:active:hover,
+.quick-toggle-has-menu:checked:hover,
+.quick-toggle-has-menu:checked .quick-toggle:hover,
+.quick-toggle-has-menu:checked .quick-toggle-menu-button:hover,
+.quick-toggle-has-menu .quick-toggle-menu-button:checked:hover,
+.screenshot-ui-type-button:checked:hover,
+.screenshot-ui-shot-cast-button:checked:hover {
+  background-color: st-lighten(-st-accent-color, 8%) !important;
+}
+
+/* Keep controls distinct when the notification card beneath them is hovered. */
+.message .message-header .message-expand-button:hover,
+.message .message-header .message-close-button:hover,
+.message-notification-group .message-collapse-button:hover {
+  background-color: #484848 !important;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px #8a8a8a;
+}
+
+.message .message-header .message-expand-button:active,
+.message .message-header .message-close-button:active,
+.message-notification-group .message-collapse-button:active {
+  background-color: #606060 !important;
+  color: #ffffff;
+  box-shadow: inset 0 0 0 1px #aaaaaa;
+}
+
+/* Keep the collapse control's outline thin without changing its hit area. */
+.message-notification-group .message-collapse-button {
+  border-width: 0;
+  padding: 8px !important;
+}
+
+/* Use the notification controls' hover and pressed fills for media controls. */
+.media-message .message-media-control:hover {
+  background-color: #484848 !important;
+  color: #ffffff;
+}
+
+.media-message .message-media-control:active {
+  background-color: #606060 !important;
+  color: #ffffff;
+}
