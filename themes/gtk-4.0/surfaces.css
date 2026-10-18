@@ -1,0 +1,45 @@
+
+/* Keep large surfaces black; retain normal control and selection feedback.
+ * Views use palette colors, preserving transparent embedded editors and controls. */
+.background:not(popover),
+headerbar,
+headerbar:backdrop,
+toolbar,
+statusbar,
+notebook > header,
+tabbar,
+popover > contents,
+.sidebar {
+  background-color: @window_bg_color;
+  background-image: none;
+}
+
+/* Match the subtle inner outline used by dark window decorations. */
+popover > contents {
+  outline: 1px solid rgba(255, 255, 255, 0.07);
+  outline-offset: -1px;
+}
+
+/* The popup surface includes transparent space around its contents. */
+popover.background {
+  background-color: transparent;
+  background-image: none;
+}
+
+/* Match the subtle hover shade while keeping native sidebar and selection states. */
+list.boxed-list:not(.navigation-sidebar) > row.activatable:not(:selected):not(:disabled):hover,
+list.rich-list:not(.navigation-sidebar) > row.activatable:not(:selected):not(:disabled):hover,
+row.expander > box > list > row.header.activatable:not(:selected):not(:disabled):hover,
+row.expander list.nested > row.activatable:not(:selected):not(:disabled):hover,
+.nautilus-list-view columnview > listview > row.activatable:not(:selected):not(:disabled):hover,
+.nautilus-grid-view gridview > child.activatable:not(:selected):not(:disabled):hover {
+  background-color: #121212;
+}
+list.boxed-list:not(.navigation-sidebar) > row.activatable:not(:selected):not(:disabled):active,
+list.rich-list:not(.navigation-sidebar) > row.activatable:not(:selected):not(:disabled):active,
+row.expander > box > list > row.header.activatable:not(:selected):not(:disabled):active,
+row.expander list.nested > row.activatable:not(:selected):not(:disabled):active,
+.nautilus-list-view columnview > listview > row.activatable:not(:selected):not(:disabled):active,
+.nautilus-grid-view gridview > child.activatable:not(:selected):not(:disabled):active {
+  background-color: #2a2a2a;
+}

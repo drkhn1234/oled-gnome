@@ -1,0 +1,89 @@
+/* OLED surfaces; leave accent and selection colors to GTK/libadwaita. */
+
+@define-color destructive_bg_color #f48771;
+@define-color destructive_fg_color #f48771;
+
+@define-color error_bg_color #f48771;
+@define-color error_fg_color #f48771;
+
+@define-color window_bg_color #000000;
+@define-color window_fg_color #ffffff;
+
+@define-color view_bg_color #000000;
+@define-color view_fg_color #ffffff;
+
+@define-color headerbar_bg_color #000000;
+@define-color headerbar_fg_color #ffffff;
+@define-color headerbar_backdrop_color @window_bg_color;
+
+@define-color popover_bg_color #000000;
+@define-color popover_fg_color #ffffff;
+
+@define-color card_bg_color #000000;
+@define-color card_fg_color #ffffff;
+
+@define-color dialog_bg_color #000000;
+@define-color dialog_fg_color #ffffff;
+
+@define-color overview_bg_color #000000;
+@define-color overview_fg_color #ffffff;
+
+@define-color sidebar_bg_color #000000;
+@define-color sidebar_fg_color #ffffff;
+@define-color sidebar_backdrop_color @window_bg_color;
+@define-color sidebar_border_color @window_bg_color;
+
+@define-color secondary_sidebar_bg_color #000000;
+@define-color secondary_sidebar_fg_color #ffffff;
+
+/* Backdrop/unfocused states */
+@define-color theme_unfocused_fg_color @window_fg_color;
+@define-color theme_unfocused_text_color @view_fg_color;
+@define-color theme_unfocused_bg_color @window_bg_color;
+@define-color theme_unfocused_base_color @window_bg_color;
+
+:root {
+    --destructive-bg-color: #f48771;
+    --destructive-fg-color: #f48771;
+
+    --error-bg-color: #f48771;
+    --error-fg-color: #f48771;
+    --error-color: #f48771;
+
+    --window-bg-color: #000000;
+    --window-fg-color: #ffffff;
+
+    --view-bg-color: #000000;
+    --view-fg-color: #ffffff;
+
+    --headerbar-bg-color: #000000;
+    --headerbar-fg-color: #ffffff;
+    --headerbar-backdrop-color: @window_bg_color;
+
+    --popover-bg-color: #000000;
+    --popover-fg-color: #ffffff;
+
+    --card-bg-color: #000000;
+    --card-fg-color: #ffffff;
+
+    --dialog-bg-color: #000000;
+    --dialog-fg-color: #ffffff;
+
+    --overview-bg-color: #000000;
+    --overview-fg-color: #ffffff;
+
+    --sidebar-bg-color: #000000;
+    --sidebar-fg-color: #ffffff;
+    --sidebar-backdrop-color: @window_bg_color;
+    --sidebar-border-color: @window_bg_color;
+
+    --warning-bg-color: #0d71cd;
+    --warning-fg-color: #ecf6ff;
+    --warning-color: #95c8f7;
+
+    --success-color: #f38518;
+    --success-bg-color: #552c04;
+    --success-fg-color: #fce5cf;
+
+    --shade-color: rgba(0, 0, 0, 0.36);
+}

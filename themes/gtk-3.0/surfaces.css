@@ -1,0 +1,208 @@
+/* OLED colors for GTK 3 themes that use the older Adwaita names. */
+@define-color theme_bg_color @window_bg_color;
+@define-color theme_fg_color @window_fg_color;
+@define-color theme_base_color @view_bg_color;
+@define-color theme_text_color @view_fg_color;
+@define-color bg_color @window_bg_color;
+@define-color fg_color @window_fg_color;
+@define-color base_color @view_bg_color;
+@define-color text_color @view_fg_color;
+@define-color insensitive_bg_color @window_bg_color;
+@define-color insensitive_fg_color #999999;
+@define-color insensitive_base_color @view_bg_color;
+@define-color content_view_bg_color @view_bg_color;
+@define-color borders #242424;
+@define-color unfocused_borders #242424;
+
+/* Keep large surfaces black; retain normal control and selection feedback. */
+.background,
+headerbar,
+headerbar:backdrop,
+toolbar,
+statusbar,
+notebook > header,
+list,
+stacksidebar,
+popover > contents,
+.sidebar {
+  background-color: @window_bg_color;
+  background-image: none;
+}
+.view,
+textview,
+textview text {
+  background-color: @view_bg_color;
+}
+
+menu, menubar {
+  background-color: @window_bg_color;
+  color: @window_fg_color;
+}
+
+/* Lists also cover older settings cards and sidebars without sidebar classes. */
+list > row:not(:selected) {
+  background-color: transparent;
+  background-image: none;
+}
+list > row.activatable:not(:selected):not(:disabled):hover {
+  background-color: #121212;
+}
+list > row.activatable:not(:selected):not(:disabled):active {
+  background-color: #2a2a2a;
+}
+list > row:selected:not(:disabled) {
+  background-color: #1a1a1a;
+  background-image: none;
+  color: #ffffff;
+}
+list > row:selected:not(:disabled):hover {
+  background-color: #242424;
+}
+list > row:selected:not(:disabled):active {
+  background-color: #363636;
+}
+frame > border,
+scrolledwindow.frame {
+  border-color: #242424;
+}
+
+/* Black resting controls; keep semantic actions and disabled states native. */
+button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.link):not(:checked):not(:disabled) {
+  background-color: #000000;
+  background-image: none;
+  border-color: #363636;
+  color: #ffffff;
+  box-shadow: none;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.link):not(:checked):not(:disabled):hover {
+  background-color: #1a1a1a;
+}
+button:not(.suggested-action):not(.destructive-action):not(.titlebutton):not(.link):not(:checked):not(:disabled):active {
+  background-color: #2a2a2a;
+}
+button.flat:not(.suggested-action):not(.destructive-action):not(:checked):not(:disabled) {
+  border-color: transparent;
+}
+
+entry:not(:disabled),
+spinbutton:not(:disabled) {
+  background-color: #000000;
+  background-image: none;
+  border-color: #363636;
+  color: #ffffff;
+  box-shadow: none;
+}
+entry:not(:disabled):focus,
+spinbutton:not(:disabled):focus {
+  border-color: #8a8a8a;
+}
+
+/* Neutral switch tracks and bright handles remain clear on black cards. */
+switch:not(:disabled) {
+  background-color: #161616;
+  background-image: none;
+  border-color: #484848;
+  box-shadow: none;
+}
+switch:not(:disabled):checked {
+  background-color: #484848;
+  border-color: #707070;
+}
+switch:not(:disabled):hover {
+  border-color: #8a8a8a;
+}
+switch:not(:disabled):checked:hover {
+  background-color: #606060;
+}
+switch:not(:disabled) slider {
+  background-color: #e6e6e6;
+  background-image: none;
+  border-color: #e6e6e6;
+  box-shadow: none;
+}
+
+checkbutton check:not(:disabled),
+radiobutton radio:not(:disabled) {
+  background-color: #000000;
+  background-image: none;
+  border-color: #707070;
+  color: #ffffff;
+  box-shadow: none;
+}
+checkbutton check:not(:disabled):checked,
+checkbutton check:not(:disabled):indeterminate,
+radiobutton radio:not(:disabled):checked {
+  background-color: #484848;
+  border-color: #8a8a8a;
+}
+checkbutton check:not(:disabled):hover,
+radiobutton radio:not(:disabled):hover {
+  border-color: #b3b3b3;
+}
+
+/* Keep selected toolbar tools distinct from ordinary hover feedback. */
+button:checked:not(.suggested-action):not(.destructive-action):not(:disabled),
+toolbar button:checked:not(:disabled),
+.toolbar button:checked:not(:disabled),
+toolpalette button:checked:not(:disabled) {
+  background-color: #484848;
+  background-image: none;
+  color: #ffffff;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+
+button:checked:not(.suggested-action):not(.destructive-action):not(:disabled):hover,
+toolbar button:checked:not(:disabled):hover,
+.toolbar button:checked:not(:disabled):hover,
+toolpalette button:checked:not(:disabled):hover {
+  background-color: #606060;
+}
+
+button:checked:not(.suggested-action):not(.destructive-action):not(:disabled):active,
+toolbar button:checked:not(:disabled):active,
+.toolbar button:checked:not(:disabled):active,
+toolpalette button:checked:not(:disabled):active {
+  background-color: #363636;
+}
+
+/* Match the subtle inner outline used by dark window decorations. */
+popover,
+menu {
+  outline: 1px solid rgba(255, 255, 255, 0.07);
+  outline-offset: -1px;
+}
+
+/* GTK 3 runtimes may fall back to a light base theme when drawing native frames. */
+headerbar,
+.titlebar {
+  color: @headerbar_fg_color;
+  border: 1px solid #242424;
+  box-shadow: none;
+}
+/* App themes may paint the vertical box containing the window title. */
+headerbar > box.vertical,
+.titlebar > box.vertical {
+  background-color: transparent;
+  background-image: none;
+}
+headerbar .title,
+.titlebar .title,
+headerbar button.titlebutton,
+.titlebar button.titlebutton {
+  color: @headerbar_fg_color;
+  text-shadow: none;
+  -gtk-icon-shadow: none;
+}
+headerbar:backdrop,
+.titlebar:backdrop,
+headerbar:backdrop .title,
+.titlebar:backdrop .title,
+headerbar .title:backdrop,
+.titlebar .title:backdrop,
+headerbar button.titlebutton:backdrop,
+.titlebar button.titlebutton:backdrop {
+  color: #b3b3b3;
+}
